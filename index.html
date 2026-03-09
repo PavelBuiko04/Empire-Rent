@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empire Rent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+</head>
+<body>
+  <section class="video-section">
+    <nav class="top-nav" aria-label="Main navigation">
+      <a href="#" class="top-nav-logo">Empire Rent</a>
+      <button
+        class="top-nav-toggle"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="top-nav-links"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="top-nav-links" id="top-nav-links">
+        <a href="#" class="top-nav-item">Search for an apartment</a>
+        <a href="#" class="top-nav-item">Search for a place</a>
+        <a href="#" class="top-nav-item">Our locations</a>
+        <a href="#" class="top-nav-item">Empire Club</a>
+      </div>
+    </nav>
+    <video
+      id="apple-video"
+      data-src-desktop="0307-desktop.mp4"
+      data-src-mobile="0307-mobile.mp4"
+      playsinline
+      muted
+      preload="auto"
+    ></video>
+    <div class="intro-badge">Empire Rent</div>
+    <div class="end-blocks" aria-hidden="true">
+      <div class="end-block end-block-left"></div>
+      <div class="end-block end-block-right"></div>
+    </div>
+  </section>
+  <section class="showcase-section" aria-label="Our apartments">
+    <div class="showcase-grid">
+      <article class="showcase-intro">
+        <a href="#" class="showcase-button">Catalog</a>
+        <h2 class="showcase-title">Our Space</h2>
+      </article>
+      <article
+        class="apartment-card apartment-card-primary"
+        role="button"
+        tabindex="0"
+        aria-label="Open Skyline Echo Loft"
+        data-apartment-id="apt1"
+      >
+        <img
+          src="apart1_16_9.png"
+          alt=" The Sky Residence"
+          data-portrait-src="apart1_16_9.png"
+          data-landscape-src="apart1_16_9.png"
+        >
+        <video
+          class="apartment-full-video"
+          src="apart1_16_9_video_scrub.mp4"
+          playsinline
+          muted
+          preload="auto"
+        ></video>
+        <div class="apartment-facts" aria-hidden="true">
+          <div class="apartment-fact apartment-fact-stack">
+            <div class="apartment-fact-metric">
+              <span class="apartment-fact-number">3</span>
+              <span class="apartment-fact-unit">bedrooms</span>
+            </div>
+            <div class="apartment-fact-metric">
+              <span class="apartment-fact-number">4</span>
+              <span class="apartment-fact-unit">toilets</span>
+            </div>
+            <div class="apartment-fact-metric">
+              <span class="apartment-fact-number">3229</span>
+              <span class="apartment-fact-unit">sqft</span>
+            </div>
+          </div>
+          <div class="apartment-fact apartment-fact-price">$14,500,000</div>
+        </div>
+        <h3>The Sky Residence</h3>
+        <aside class="apartment-description" aria-label="Apartment description">
+          Introducing The Sky Residence at 12 Crestfield Row, a one-of-a-kind four-level penthouse in a 19th-century landmark. Conceived by David Hotson with interiors by Ghislaine Vinas, this 6,500-square-foot home blends sculptural design with everyday comfort: a stainless-steel spiral slide links floors, while the grand main room with nearly 46-foot vaulted ceilings and sweeping arched windows opens to a 1,200-square-foot terrace filled with eastern light. The gourmet kitchen is equipped with Sub-Zero, Gaggenau, and Miele, plus a hidden prep area and discreet pantry storage. The primary suite includes a media room, corner exposures, a spa bath with jet tub and steam shower, generous closets, and a concealed room. Three additional bedrooms, wraparound terraces, and a top-level gym complete this historic-meets-modern residence with full-service condominium amenities.
+        </aside>
+        <aside class="apartment-history" aria-label="Price history">
+          <h4>Price history (5 years)</h4>
+          <p><span>2021</span><span>$10,950,000</span></p>
+          <p><span>2022</span><span>$11,780,000</span></p>
+          <p><span>2023</span><span>$12,660,000</span></p>
+          <p><span>2024</span><span>$13,780,000</span></p>
+          <p><span>2025</span><span>$14,500,000</span></p>
+        </aside>
+        <div class="apartment-keypoints" aria-label="Property highlights">
+          <div class="apartment-keypoint">Private rooftop terrace</div>
+          <div class="apartment-keypoint">Smart climate system</div>
+          <div class="apartment-keypoint">24/7 concierge service</div>
+        </div>
+        <div class="apartment-overlay-ui" aria-hidden="true">
+          <button class="apartment-back" type="button" aria-label="Back">
+            &#8592; Back
+          </button>
+          <button class="apartment-overlay-toggle" type="button" aria-label="Toggle apartment navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <nav class="apartment-overlay-nav" aria-label="Apartment navigation">
+            <a href="#">Search for an apartment</a>
+            <a href="#">Search for a place</a>
+            <a href="#">Our locations</a>
+            <a href="#">Empire Club</a>
+          </nav>
+        </div>
+      </article>
+      <article
+        class="apartment-card apartment-card-secondary"
+        role="button"
+        tabindex="0"
+        aria-label="Open Velvet Horizon Suite"
+        data-apartment-id="apt2"
+      >
+        <img
+          src="apart2_16_9.png"
+          alt="Velvet Horizon Suite"
+          data-portrait-src="apart2_16_9.png"
+          data-landscape-src="apart2_16_9.png"
+        >
+        <video
+          class="apartment-full-video"
+          src="apart2_16_9_video_scrub.mp4"
+          playsinline
+          muted
+          preload="auto"
+        ></video>
+        <div class="apartment-facts" aria-hidden="true">
+          <div class="apartment-fact apartment-fact-stack">
+            <div class="apartment-fact-metric">
+              <span class="apartment-fact-number">4</span>
+              <span class="apartment-fact-unit">bedrooms</span>
+            </div>
+            <div class="apartment-fact-metric">
+              <span class="apartment-fact-number">5</span>
+              <span class="apartment-fact-unit">toilets</span>
+            </div>
+            <div class="apartment-fact-metric">
+              <span class="apartment-fact-number">4010</span>
+              <span class="apartment-fact-unit">sqft</span>
+            </div>
+          </div>
+          <div class="apartment-fact apartment-fact-price">$18,900,000</div>
+        </div>
+        <h3>Velvet Horizon Suite</h3>
+        <aside class="apartment-description" aria-label="Apartment description">
+          Introducing Velvet Horizon Suite at 48 Meridian Harbor, a meticulously crafted duplex residence designed for panoramic city and waterfront living. The home combines sculptural architecture with warm contemporary finishes, featuring dramatic ceiling heights, full-height glazing, and a seamless indoor-outdoor flow to expansive terraces. A chef-grade kitchen with premium integrated appliances is paired with a concealed service pantry, while custom millwork and engineered storage solutions maintain refined minimalism throughout. The primary wing includes a private lounge, spa bath, oversized walk-in wardrobes, and curated lighting sequences; additional bedrooms are arranged for privacy around a central gallery living zone. Wellness and entertainment amenities include a private fitness studio, media salon, and dedicated concierge-level services, delivering an elevated urban residence where design precision meets uncompromising comfort.
+        </aside>
+        <aside class="apartment-history" aria-label="Price history">
+          <h4>Price history (5 years)</h4>
+          <p><span>2021</span><span>$14,200,000</span></p>
+          <p><span>2022</span><span>$15,300,000</span></p>
+          <p><span>2023</span><span>$16,400,000</span></p>
+          <p><span>2024</span><span>$17,650,000</span></p>
+          <p><span>2025</span><span>$18,900,000</span></p>
+        </aside>
+        <div class="apartment-keypoints" aria-label="Property highlights">
+          <div class="apartment-keypoint">Double-height living room</div>
+          <div class="apartment-keypoint">Panoramic skyline view</div>
+          <div class="apartment-keypoint">Private fitness studio</div>
+        </div>
+        <div class="apartment-overlay-ui" aria-hidden="true">
+          <button class="apartment-back" type="button" aria-label="Back">
+            &#8592; Back
+          </button>
+          <button class="apartment-overlay-toggle" type="button" aria-label="Toggle apartment navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <nav class="apartment-overlay-nav" aria-label="Apartment navigation">
+            <a href="#">Search for an apartment</a>
+            <a href="#">Search for a place</a>
+            <a href="#">Our locations</a>
+            <a href="#">Empire Club</a>
+          </nav>
+        </div>
+      </article>
+      <article
+        class="apartment-card apartment-card-tertiary"
+        role="button"
+        tabindex="0"
+        aria-label="Open Moonlight Atrium Residence"
+        data-apartment-id="apt3"
+      >
+        <img
+          src="apart3_16_9.png"
+          alt="Moonlight Atrium Residence"
+          data-portrait-src="apart3_16_9.png"
+          data-landscape-src="apart3_16_9.png"
+        >
+        <video
+          class="apartment-full-video"
+          src="apart3_16_9_video_scrub.mp4"
+          playsinline
+          muted
+          preload="auto"
+        ></video>
+        <div class="apartment-facts" aria-hidden="true">
+          <div class="apartment-fact apartment-fact-stack">
+            <div class="apartment-fact-metric">
+              <span class="apartment-fact-number">2</span>
+              <span class="apartment-fact-unit">bedrooms</span>
+            </div>
+            <div class="apartment-fact-metric">
+              <span class="apartment-fact-number">3</span>
+              <span class="apartment-fact-unit">toilets</span>
+            </div>
+            <div class="apartment-fact-metric">
+              <span class="apartment-fact-number">2710</span>
+              <span class="apartment-fact-unit">sqft</span>
+            </div>
+          </div>
+          <div class="apartment-fact apartment-fact-price">$12,700,000</div>
+        </div>
+        <h3>Moonlight Atrium Residence</h3>
+        <aside class="apartment-description" aria-label="Apartment description">
+          Moonlight Atrium Residence at 90 Riverline Promenade is a luminous, gallery-like penthouse curated for quiet luxury. Framed by oversized glazing and crafted natural finishes, the residence blends intimate living zones with dramatic entertaining spaces and layered city-river perspectives. A bespoke chef's kitchen anchors the core with premium integrated appliances, concealed service storage, and sculpted stone surfaces. The primary suite offers hotel-level privacy with spa amenities, custom wardrobe systems, and cinematic sunset exposures, while secondary suites are arranged around a flexible lounge for work, media, and retreat. Outdoor terraces, wellness-ready spaces, and full-service condominium support complete a home designed for refined metropolitan living.
+        </aside>
+        <aside class="apartment-history" aria-label="Price history">
+          <h4>Price history (5 years)</h4>
+          <p><span>2021</span><span>$9,100,000</span></p>
+          <p><span>2022</span><span>$9,850,000</span></p>
+          <p><span>2023</span><span>$10,700,000</span></p>
+          <p><span>2024</span><span>$11,650,000</span></p>
+          <p><span>2025</span><span>$12,700,000</span></p>
+        </aside>
+        <div class="apartment-keypoints" aria-label="Property highlights">
+          <div class="apartment-keypoint">Riverside sunset exposure</div>
+          <div class="apartment-keypoint">Designer chef kitchen</div>
+          <div class="apartment-keypoint">Secure private parking</div>
+        </div>
+        <div class="apartment-overlay-ui" aria-hidden="true">
+          <button class="apartment-back" type="button" aria-label="Back">
+            &#8592; Back
+          </button>
+          <button class="apartment-overlay-toggle" type="button" aria-label="Toggle apartment navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <nav class="apartment-overlay-nav" aria-label="Apartment navigation">
+            <a href="#">Search for an apartment</a>
+            <a href="#">Search for a place</a>
+            <a href="#">Our locations</a>
+            <a href="#">Empire Club</a>
+          </nav>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section class="about-section" aria-label="About us">
+    <div class="about-content">
+      <p class="about-eyebrow">Real estate agency number 1 in the world</p>
+      <div class="about-main-row">
+        <p class="about-text">
+          We are a boutique real estate team focused on premium apartments in NYC. We combine market analytics, private network access, and full-cycle support to secure the right property with confidence, speed, and long-term value.
+        </p>
+        <h2 class="about-title">About Us</h2>
+      </div>
+    </div>
+  </section>
+  <section class="stats-section" aria-label="Why choose us">
+    <div class="stats-grid">
+      <article class="stat-card">
+        <h3>15+ years</h3>
+        <p>On the premium real estate market</p>
+      </article>
+      <article class="stat-card">
+        <h3>1,000+</h3>
+        <p>Apartments sold successfully</p>
+      </article>
+      <article class="stat-card">
+        <h3>$900M+</h3>
+        <p>Total closed deal volume</p>
+      </article>
+      <article class="stat-card">
+        <h3>97%</h3>
+        <p>Clients return and recommend us</p>
+      </article>
+    </div>
+  </section>
+  <section class="worker-carousel-section" aria-label="Our team">
+    <div class="worker-carousel-wrapper">
+      <div class="worker-carousel">
+        <article class="worker-carousel__item">
+          <div class="worker-carousel__item-head">
+            <img src="worker1.png" alt="Ariana Vale">
+          </div>
+          <div class="worker-carousel__item-body">
+            <p class="worker-carousel__title">Ariana Vale</p>
+            <p class="worker-carousel__desc">Lead broker for waterfront and penthouse residences with precision-focused negotiations.</p>
+            <p class="worker-carousel__meta">+1 (212) 555-0184</p>
+            <p class="worker-carousel__meta">ariana@empirerent.com</p>
+          </div>
+        </article>
+        <article class="worker-carousel__item">
+          <div class="worker-carousel__item-head">
+            <img src="worker2.png" alt="Lucas Sterling">
+          </div>
+          <div class="worker-carousel__item-body">
+            <p class="worker-carousel__title">Lucas Sterling</p>
+            <p class="worker-carousel__desc">Investment strategist specializing in high-yield urban portfolios and off-market opportunities.</p>
+            <p class="worker-carousel__meta">+1 (212) 555-0137</p>
+            <p class="worker-carousel__meta">lucas@empirerent.com</p>
+          </div>
+        </article>
+        <article class="worker-carousel__item">
+          <div class="worker-carousel__item-head">
+            <img src="worker3.png" alt="Adrian Hart">
+          </div>
+          <div class="worker-carousel__item-body">
+            <p class="worker-carousel__title">Adrian Hart</p>
+            <p class="worker-carousel__desc">Client advisor known for lifestyle matching, concierge-level support, and elegant deal execution.</p>
+            <p class="worker-carousel__meta">+1 (212) 555-0192</p>
+            <p class="worker-carousel__meta">adrian@empirerent.com</p>
+          </div>
+        </article>
+        <article class="worker-carousel__item">
+          <div class="worker-carousel__item-head">
+            <img src="worker4.png" alt="Maya Cole">
+          </div>
+          <div class="worker-carousel__item-body">
+            <p class="worker-carousel__title">Maya Cole</p>
+            <p class="worker-carousel__desc">Market analyst delivering data-backed pricing strategy and confident closings for premium assets.</p>
+            <p class="worker-carousel__meta">+1 (212) 555-0165</p>
+            <p class="worker-carousel__meta">maya@empirerent.com</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="consult-section" aria-label="Consultation form">
+    <div class="consult-wrap">
+      <div class="consult-head">
+        <p class="consult-eyebrow">Personal support</p>
+        <h2 class="consult-title">Get a Consultation</h2>
+        <p class="consult-subtitle">Leave your details and our broker will contact you with a tailored strategy.</p>
+      </div>
+      <div class="consult-form" role="form" aria-disabled="true">
+        <label class="consult-field">
+          <span>Name</span>
+          <input type="text" name="name" placeholder="Your full name" required>
+        </label>
+        <label class="consult-field">
+          <span>Phone</span>
+          <input type="tel" name="phone" placeholder="+1 (___) ___-____" required>
+        </label>
+        <label class="consult-field">
+          <span>Email</span>
+          <input type="email" name="email" placeholder="you@example.com" required>
+        </label>
+        <label class="consult-field">
+          <span>Request type</span>
+          <select name="request_type" required>
+            <option value="">Select</option>
+            <option value="buy">Buy apartment</option>
+            <option value="sell">Sell apartment</option>
+            <option value="invest">Investment consulting</option>
+          </select>
+        </label>
+        <label class="consult-field consult-field-full">
+          <span>Message</span>
+          <textarea name="message" rows="4" placeholder="Tell us your goals, budget and preferred area"></textarea>
+        </label>
+        <button class="consult-submit" type="button" aria-disabled="true">Send request</button>
+      </div>
+    </div>
+  </section>
+  <footer class="site-footer" aria-label="Footer">
+    <div class="site-footer-wrap">
+      <div class="site-footer-brand">
+        <a href="#" class="site-footer-logo">Empire Rent</a>
+        <p>Luxury real estate advisory for premium apartments and long-term value investments.</p>
+      </div>
+      <nav class="site-footer-nav" aria-label="Footer navigation">
+        <a href="#">Search for an apartment</a>
+        <a href="#">Search for a place</a>
+        <a href="#">Our locations</a>
+        <a href="#">Empire Club</a>
+      </nav>
+      <div class="site-footer-contact">
+        <p>+1 (212) 555-0199</p>
+        <p>info@empirerent.com</p>
+        <p>New York, NY</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // Normalize navigation entry to GET once per tab session to avoid
+    // browser "Confirm form resubmission" prompt on refresh.
+    const GET_NORMALIZED_KEY = "empire-get-normalized";
+    if (!sessionStorage.getItem(GET_NORMALIZED_KEY)) {
+      sessionStorage.setItem(GET_NORMALIZED_KEY, "1");
+      const cleanUrl = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+      window.location.replace(cleanUrl);
+    }
+
+    gsap.registerPlugin(ScrollTrigger);
+    const APARTMENT_ACTIVE_KEY = "empire-apartment-active";
+    const APARTMENT_PROGRESS_KEY_PREFIX = "empire-apartment-progress-";
+
+    document.addEventListener("click", (event) => {
+      const anchor = event.target.closest('a[href="#"]');
+      if (anchor) {
+        event.preventDefault();
+      }
+    });
+
+    const video = document.querySelector("#apple-video");
+    const HERO_MOBILE_BREAKPOINT = 768;
+    const heroMediaQuery = window.matchMedia(`(max-width: ${HERO_MOBILE_BREAKPOINT}px)`);
+    let currentHeroSource = "";
+
+    function syncHeroVideoSource(force = false) {
+      if (!video) return;
+      const nextSource = heroMediaQuery.matches ? video.dataset.srcMobile : video.dataset.srcDesktop;
+      if (!nextSource) return;
+      if (!force && currentHeroSource === nextSource) return;
+
+      ScrollTrigger.getById("hero-video-scroll")?.kill();
+      ScrollTrigger.getById("hero-nav-follow")?.kill();
+      currentHeroSource = nextSource;
+      video.src = nextSource;
+      video.load();
+    }
+
+    syncHeroVideoSource(true);
+    if (heroMediaQuery.addEventListener) {
+      heroMediaQuery.addEventListener("change", () => {
+        syncHeroVideoSource();
+      });
+    } else if (heroMediaQuery.addListener) {
+      heroMediaQuery.addListener(() => {
+        syncHeroVideoSource();
+      });
+    }
+
+    function apartmentProgressKey(id) {
+      return `${APARTMENT_PROGRESS_KEY_PREFIX}${id}`;
+    }
+
+    const apartments = Array.from(document.querySelectorAll(".apartment-card[data-apartment-id]")).map((card) => {
+      const id = card.dataset.apartmentId;
+      const image = card.querySelector("img");
+      const fullVideo = card.querySelector(".apartment-full-video");
+      const title = card.querySelector("h3");
+      const facts = Array.from(card.querySelectorAll(".apartment-fact"));
+      const description = card.querySelector(".apartment-description");
+      const history = card.querySelector(".apartment-history");
+      const keypoints = Array.from(card.querySelectorAll(".apartment-keypoint"));
+      const overlayUi = card.querySelector(".apartment-overlay-ui");
+      const overlayToggle = card.querySelector(".apartment-overlay-toggle");
+      const backButton = card.querySelector(".apartment-back");
+      const previewLoader = new Image();
+
+      if (image?.dataset.landscapeSrc) {
+        previewLoader.src = image.dataset.landscapeSrc;
+      }
+
+      return {
+        id,
+        card,
+        image,
+        fullVideo,
+        title,
+        facts,
+        description,
+        history,
+        keypoints,
+        overlayUi,
+        overlayToggle,
+        backButton,
+        previewLoader,
+        placeholder: null,
+        expanded: false,
+        animating: false,
+        videoProgress: 0,
+        touchStartY: 0,
+        videoReady: false,
+        videoPreparing: false,
+        readyCallbacks: []
+      };
+    });
+
+    let activeApartment = null;
+
+    function setApartmentOverlayNavOpen(apartment, isOpen) {
+      if (!apartment?.card) return;
+      apartment.card.classList.toggle("apartment-nav-open", Boolean(isOpen));
+      if (apartment.overlayToggle) {
+        apartment.overlayToggle.setAttribute("aria-expanded", String(Boolean(isOpen)));
+      }
+    }
+
+    function flushVideoReadyCallbacks(apartment) {
+      while (apartment.readyCallbacks.length) {
+        const callback = apartment.readyCallbacks.shift();
+        callback?.();
+      }
+    }
+
+    function prepareApartmentVideo(apartment, onReady) {
+      if (!apartment.fullVideo) {
+        onReady?.();
+        return;
+      }
+
+      if (apartment.videoReady) {
+        onReady?.();
+        return;
+      }
+
+      if (onReady) {
+        apartment.readyCallbacks.push(onReady);
+      }
+
+      if (apartment.videoPreparing) {
+        return;
+      }
+      apartment.videoPreparing = true;
+
+      const markReady = () => {
+        if (apartment.videoReady) return;
+        apartment.videoReady = true;
+        apartment.videoPreparing = false;
+        apartment.fullVideo.pause();
+
+        const finalize = () => flushVideoReadyCallbacks(apartment);
+        const onSeeked = () => requestAnimationFrame(finalize);
+
+        apartment.fullVideo.addEventListener("seeked", onSeeked, { once: true });
+        try {
+          apartment.fullVideo.currentTime = 0.001;
+        } catch (_error) {
+          finalize();
+        }
+      };
+
+      if (apartment.fullVideo.readyState >= 2) {
+        markReady();
+      } else {
+        apartment.fullVideo.addEventListener("loadeddata", markReady, { once: true });
+        apartment.fullVideo.load();
+      }
+    }
+
+    function updateApartmentFacts(apartment, progressValue) {
+      const riseStart = 0.1;
+      const peak = 0.55;
+      const fadeEnd = 0.65;
+      let normalized = 0;
+
+      if (progressValue >= riseStart && progressValue <= peak) {
+        normalized = (progressValue - riseStart) / (peak - riseStart);
+      } else if (progressValue > peak && progressValue <= fadeEnd) {
+        normalized = 1 - (progressValue - peak) / (fadeEnd - peak);
+      }
+
+      normalized = gsap.utils.clamp(0, 1, normalized);
+
+      apartment.facts.forEach((factBlock, index) => {
+        const local = gsap.utils.clamp(0, 1, normalized * 1.35 - index * 0.18);
+        gsap.set(factBlock, {
+          autoAlpha: local,
+          y: gsap.utils.interpolate(22, 0, local),
+          scale: gsap.utils.interpolate(0.96, 1, local)
+        });
+      });
+
+      if (apartment.description) {
+        gsap.set(apartment.description, {
+          autoAlpha: normalized,
+          y: gsap.utils.interpolate(18, 0, normalized)
+        });
+      }
+
+      const historyStart = 0.6;
+      const historyFull = 0.72;
+      const historyNormalized = gsap.utils.clamp(
+        0,
+        1,
+        (progressValue - historyStart) / (historyFull - historyStart)
+      );
+
+      if (apartment.history) {
+        gsap.set(apartment.history, {
+          autoAlpha: historyNormalized,
+          y: gsap.utils.interpolate(18, 0, historyNormalized)
+        });
+      }
+
+      apartment.keypoints.forEach((point, index) => {
+        const local = gsap.utils.clamp(0, 1, historyNormalized * 1.4 - index * 0.18);
+        gsap.set(point, {
+          autoAlpha: local,
+          y: gsap.utils.interpolate(16, 0, local),
+          scale: gsap.utils.interpolate(0.96, 1, local)
+        });
+      });
+    }
+
+    function setApartmentVideoProgress(apartment, nextProgress) {
+      if (!apartment.fullVideo || !apartment.fullVideo.duration) return;
+      apartment.videoProgress = gsap.utils.clamp(0, 1, nextProgress);
+      apartment.fullVideo.currentTime = apartment.fullVideo.duration * apartment.videoProgress;
+      updateApartmentFacts(apartment, apartment.videoProgress);
+      sessionStorage.setItem(apartmentProgressKey(apartment.id), String(apartment.videoProgress));
+    }
+
+    function handleApartmentWheel(apartment, event) {
+      if (!apartment.expanded || !apartment.fullVideo) return;
+      event.preventDefault();
+      setApartmentVideoProgress(apartment, apartment.videoProgress + event.deltaY / 1800);
+    }
+
+    function handleApartmentTouchStart(apartment, event) {
+      if (!apartment.expanded) return;
+      apartment.touchStartY = event.touches[0].clientY;
+    }
+
+    function handleApartmentTouchMove(apartment, event) {
+      if (!apartment.expanded) return;
+      event.preventDefault();
+      const currentY = event.touches[0].clientY;
+      const delta = apartment.touchStartY - currentY;
+      apartment.touchStartY = currentY;
+      setApartmentVideoProgress(apartment, apartment.videoProgress + delta / 1300);
+    }
+
+    function lockPageScroll() {
+      document.documentElement.classList.add("apartment-scroll-locked");
+      document.body.classList.add("apartment-scroll-locked");
+    }
+
+    function unlockPageScroll() {
+      document.documentElement.classList.remove("apartment-scroll-locked");
+      document.body.classList.remove("apartment-scroll-locked");
+    }
+
+    function getViewportWidth() {
+      return window.visualViewport?.width || window.innerWidth;
+    }
+
+    function getViewportHeight() {
+      return window.visualViewport?.height || window.innerHeight;
+    }
+
+    function openApartment(apartment, options = {}) {
+      const { instant = false, restoredProgress = 0 } = options;
+      if (!apartment || !apartment.image || apartment.expanded || apartment.animating) {
+        return;
+      }
+      if (activeApartment && activeApartment !== apartment) {
+        return;
+      }
+
+      apartment.animating = !instant;
+      const startRect = apartment.card.getBoundingClientRect();
+      apartment.placeholder = document.createElement("div");
+      apartment.placeholder.className = "apartment-placeholder";
+      apartment.placeholder.style.display = "block";
+      apartment.placeholder.style.width = `${startRect.width}px`;
+      apartment.placeholder.style.height = `${startRect.height}px`;
+      apartment.placeholder.style.borderRadius = "28px";
+      apartment.placeholder.style.justifySelf = "center";
+      apartment.card.insertAdjacentElement("afterend", apartment.placeholder);
+
+      apartment.card.classList.add("apartment-card-expanded");
+      document.body.classList.add("apartment-overlay-open");
+      lockPageScroll();
+      activeApartment = apartment;
+      sessionStorage.setItem(APARTMENT_ACTIVE_KEY, apartment.id);
+      if (apartment.overlayUi) {
+        gsap.set(apartment.overlayUi, { autoAlpha: 0 });
+      }
+      const viewportWidth = getViewportWidth();
+      const viewportHeight = getViewportHeight();
+
+      gsap.set(apartment.card, {
+        position: "fixed",
+        top: instant ? 0 : startRect.top,
+        left: instant ? 0 : startRect.left,
+        width: instant ? viewportWidth : startRect.width,
+        height: instant ? viewportHeight : startRect.height,
+        margin: 0,
+        borderRadius: instant ? 0 : 28,
+        zIndex: 40
+      });
+
+      apartment.image.src = apartment.image.dataset.landscapeSrc;
+      apartment.card.classList.remove("apartment-video-active");
+
+      const finalizeOpen = () => {
+        apartment.videoProgress = restoredProgress || 0;
+        updateApartmentFacts(apartment, 0);
+        apartment.card.addEventListener("wheel", apartment.onWheel, { passive: false });
+        apartment.card.addEventListener("touchstart", apartment.onTouchStart, { passive: false });
+        apartment.card.addEventListener("touchmove", apartment.onTouchMove, { passive: false });
+        setApartmentOverlayNavOpen(apartment, false);
+        apartment.expanded = true;
+        apartment.animating = false;
+        if (apartment.title) gsap.set(apartment.title, { scale: 2 });
+
+        prepareApartmentVideo(apartment, () => {
+          apartment.card.classList.add("apartment-video-active");
+          setApartmentVideoProgress(apartment, restoredProgress || 0);
+        });
+      };
+
+      if (instant) {
+        if (apartment.overlayUi) {
+          gsap.set(apartment.overlayUi, { autoAlpha: 1 });
+        }
+        finalizeOpen();
+        return;
+      }
+
+      gsap.to(apartment.card, {
+        top: 0,
+        left: 0,
+        width: viewportWidth,
+        height: viewportHeight,
+        borderRadius: 0,
+        duration: 0.72,
+        ease: "power3.inOut",
+        onComplete: finalizeOpen
+      });
+
+      if (apartment.title) {
+        gsap.to(apartment.title, {
+          scale: 2,
+          duration: 0.72,
+          ease: "power3.inOut"
+        });
+      }
+
+      if (apartment.overlayUi) {
+        gsap.to(apartment.overlayUi, {
+          autoAlpha: 1,
+          duration: 0.72,
+          ease: "power2.out"
+        });
+      }
+    }
+
+    function closeApartment(apartment) {
+      if (!apartment || !apartment.image || !apartment.expanded || apartment.animating) {
+        return;
+      }
+
+      const endRect = apartment.placeholder?.getBoundingClientRect();
+      if (!endRect) return;
+
+      apartment.animating = true;
+      apartment.card.removeEventListener("wheel", apartment.onWheel);
+      apartment.card.removeEventListener("touchstart", apartment.onTouchStart);
+      apartment.card.removeEventListener("touchmove", apartment.onTouchMove);
+
+      const collapseCard = () => {
+        if (apartment.overlayUi) {
+          gsap.to(apartment.overlayUi, {
+            autoAlpha: 0,
+            duration: 0.62,
+            ease: "power2.out"
+          });
+        }
+
+        if (apartment.title) {
+          gsap.to(apartment.title, {
+            scale: 1,
+            duration: 0.62,
+            ease: "power3.inOut"
+          });
+        }
+
+        gsap.to(apartment.card, {
+          top: endRect.top,
+          left: endRect.left,
+          width: endRect.width,
+          height: endRect.height,
+          borderRadius: 28,
+          duration: 0.62,
+          ease: "power3.inOut",
+          onComplete() {
+            apartment.card.classList.remove("apartment-video-active");
+            if (apartment.fullVideo) {
+              apartment.fullVideo.pause();
+              apartment.fullVideo.currentTime = 0;
+            }
+            apartment.videoProgress = 0;
+            updateApartmentFacts(apartment, 0);
+            apartment.image.src = apartment.image.dataset.portraitSrc;
+            apartment.expanded = false;
+            apartment.animating = false;
+            apartment.card.classList.remove("apartment-card-expanded");
+            setApartmentOverlayNavOpen(apartment, false);
+            document.body.classList.remove("apartment-overlay-open");
+            unlockPageScroll();
+            if (apartment.overlayUi) {
+              gsap.set(apartment.overlayUi, { clearProps: "opacity,visibility,pointerEvents" });
+            }
+            gsap.set(apartment.card, { clearProps: "all" });
+            apartment.placeholder?.remove();
+            apartment.placeholder = null;
+            activeApartment = null;
+            sessionStorage.setItem(APARTMENT_ACTIVE_KEY, "");
+            sessionStorage.setItem(apartmentProgressKey(apartment.id), "0");
+          }
+        });
+      };
+
+      if (apartment.fullVideo && apartment.fullVideo.duration) {
+        apartment.fullVideo.pause();
+        const rewind = { progress: apartment.videoProgress };
+        const rewindDuration = Math.max(0.35, apartment.videoProgress * 0.9);
+
+        gsap.to(rewind, {
+          progress: 0,
+          duration: rewindDuration,
+          ease: "none",
+          onUpdate() {
+            setApartmentVideoProgress(apartment, rewind.progress);
+          },
+          onComplete: collapseCard
+        });
+      } else {
+        collapseCard();
+      }
+    }
+
+    function restoreApartmentState() {
+      const activeId = sessionStorage.getItem(APARTMENT_ACTIVE_KEY);
+      if (!activeId) return;
+      const apartment = apartments.find((item) => item.id === activeId);
+      if (!apartment) return;
+      const savedProgress = Number(sessionStorage.getItem(apartmentProgressKey(activeId)) || "0");
+      const restoredProgress = Number.isFinite(savedProgress) ? savedProgress : 0;
+      openApartment(apartment, { instant: true, restoredProgress });
+    }
+
+    apartments.forEach((apartment) => {
+      apartment.onWheel = (event) => handleApartmentWheel(apartment, event);
+      apartment.onTouchStart = (event) => handleApartmentTouchStart(apartment, event);
+      apartment.onTouchMove = (event) => handleApartmentTouchMove(apartment, event);
+
+      apartment.overlayUi?.addEventListener("click", (event) => {
+        event.stopPropagation();
+      });
+
+      apartment.overlayToggle?.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const isOpen = apartment.card.classList.contains("apartment-nav-open");
+        setApartmentOverlayNavOpen(apartment, !isOpen);
+      });
+
+      apartment.card.querySelectorAll(".apartment-overlay-nav a").forEach((link) => {
+        link.addEventListener("click", () => {
+          setApartmentOverlayNavOpen(apartment, false);
+        });
+      });
+
+      apartment.backButton?.addEventListener("click", (event) => {
+        event.stopPropagation();
+        closeApartment(apartment);
+      });
+
+      apartment.card.addEventListener("click", () => {
+        if (!apartment.expanded && !activeApartment) {
+          openApartment(apartment);
+        }
+      });
+
+      apartment.card.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          if (apartment.expanded) {
+            closeApartment(apartment);
+          } else if (!activeApartment) {
+            openApartment(apartment);
+          }
+        }
+      });
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && activeApartment) {
+        closeApartment(activeApartment);
+      }
+    });
+
+    requestAnimationFrame(() => {
+      restoreApartmentState();
+    });
+
+    apartments.forEach((apartment) => {
+      prepareApartmentVideo(apartment);
+    });
+
+    const topNav = document.querySelector(".top-nav");
+    const topNavToggle = document.querySelector(".top-nav-toggle");
+    const topNavLinks = document.querySelector(".top-nav-links");
+    const introBadge = document.querySelector(".intro-badge");
+    const leftBlock = document.querySelector(".end-block-left");
+    const rightBlock = document.querySelector(".end-block-right");
+    const introEnd = 0.12;
+    const blocksStart = 0.88;
+    const blocksEnd = 0.98;
+    let heroVideoTween = null;
+    let heroResizeTimer = null;
+
+    function setTopNavOpenState(isOpen) {
+      if (!topNav || !topNavToggle) return;
+      topNav.classList.toggle("nav-open", isOpen);
+      topNavToggle.setAttribute("aria-expanded", String(isOpen));
+    }
+
+    if (topNav && topNavToggle && topNavLinks) {
+      setTopNavOpenState(false);
+
+      topNavToggle.addEventListener("click", (event) => {
+        event.stopPropagation();
+        setTopNavOpenState(!topNav.classList.contains("nav-open"));
+      });
+
+      topNavLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          setTopNavOpenState(false);
+        });
+      });
+
+      document.addEventListener("click", (event) => {
+        if (window.innerWidth > 900) return;
+        if (!topNav.contains(event.target)) {
+          setTopNavOpenState(false);
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          setTopNavOpenState(false);
+        }
+      });
+
+      window.addEventListener(
+        "resize",
+        () => {
+          if (window.innerWidth > 900) {
+            setTopNavOpenState(false);
+          }
+        },
+        { passive: true }
+      );
+    }
+
+    function getTopNavOffset() {
+      if (!topNav) return 24;
+      const rootVar = parseFloat(
+        getComputedStyle(document.documentElement).getPropertyValue("--nav-top-offset")
+      );
+      if (Number.isFinite(rootVar)) return rootVar;
+      const inlineTop = parseFloat(getComputedStyle(topNav).top);
+      return Number.isFinite(inlineTop) ? inlineTop : 24;
+    }
+
+    function placeTopNavAbsolute() {
+      if (!topNav) return;
+      gsap.set(topNav, {
+        position: "absolute",
+        top: getTopNavOffset(),
+        left: "50%",
+        xPercent: -50,
+        y: 0,
+        autoAlpha: 1
+      });
+    }
+
+    function placeTopNavFixed() {
+      if (!topNav) return;
+      gsap.set(topNav, {
+        position: "fixed",
+        top: getTopNavOffset(),
+        left: "50%",
+        xPercent: -50,
+        autoAlpha: 1
+      });
+    }
+
+    function getHeroScrollDistance() {
+      if (window.innerWidth <= 767) return "+=150%";
+      if (window.innerWidth <= 1023) return "+=180%";
+      return "+=220%";
+    }
+
+    function clearHeroScrollScene() {
+      ScrollTrigger.getById("hero-video-scroll")?.kill();
+      ScrollTrigger.getById("hero-nav-follow")?.kill();
+      if (heroVideoTween) {
+        heroVideoTween.kill();
+        heroVideoTween = null;
+      }
+    }
+
+    function initHeroScrollScene() {
+      if (!video || !video.duration) return;
+
+      clearHeroScrollScene();
+      video.pause();
+      placeTopNavAbsolute();
+
+      if (introBadge) {
+        gsap.set(introBadge, { autoAlpha: 1 });
+      }
+      if (leftBlock) {
+        gsap.set(leftBlock, { xPercent: -100, autoAlpha: 0 });
+      }
+      if (rightBlock) {
+        gsap.set(rightBlock, { xPercent: 100, autoAlpha: 0 });
+      }
+
+      heroVideoTween = gsap.to(video, {
+        currentTime: video.duration,
+        ease: "none",
+        scrollTrigger: {
+          id: "hero-video-scroll",
+          trigger: ".video-section",
+          start: "top top",
+          end: getHeroScrollDistance(),
+          scrub: true,
+          pin: true,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+          onLeave() {
+            placeTopNavFixed();
+          },
+          onEnterBack() {
+            placeTopNavAbsolute();
+          },
+          onUpdate(self) {
+            const introProgress = gsap.utils.clamp(0, 1, self.progress / introEnd);
+            if (introBadge) {
+              gsap.set(introBadge, { autoAlpha: 1 - introProgress });
+            }
+
+            const blocksProgress = gsap.utils.clamp(
+              0,
+              1,
+              (self.progress - blocksStart) / (blocksEnd - blocksStart)
+            );
+            if (leftBlock) {
+              gsap.set(leftBlock, {
+                xPercent: gsap.utils.interpolate(-100, 0, blocksProgress),
+                autoAlpha: blocksProgress
+              });
+            }
+            if (rightBlock) {
+              gsap.set(rightBlock, {
+                xPercent: gsap.utils.interpolate(100, 0, blocksProgress),
+                autoAlpha: blocksProgress
+              });
+            }
+          }
+        }
+      });
+
+      if (topNav) {
+        const shouldFollowOnPage = window.innerWidth > 900;
+        ScrollTrigger.create({
+          id: "hero-nav-follow",
+          trigger: ".video-section",
+          start: "bottom top",
+          end: "max",
+          onEnter() {
+            placeTopNavFixed();
+            gsap.set(topNav, { y: 0 });
+          },
+          onUpdate(self) {
+            if (!shouldFollowOnPage) return;
+            const delta = Math.max(0, self.scroll() - self.start);
+            gsap.set(topNav, { y: delta });
+          },
+          onEnterBack() {
+            placeTopNavFixed();
+            if (!shouldFollowOnPage) {
+              gsap.set(topNav, { y: 0 });
+              return;
+            }
+            const delta = Math.max(0, self.scroll() - self.start);
+            gsap.set(topNav, { y: delta });
+          },
+          onLeaveBack() {
+            gsap.set(topNav, { y: 0 });
+            placeTopNavAbsolute();
+          }
+        });
+      }
+
+      ScrollTrigger.refresh();
+    }
+
+    video.addEventListener("loadedmetadata", initHeroScrollScene);
+
+    window.addEventListener(
+      "resize",
+      () => {
+        window.clearTimeout(heroResizeTimer);
+        heroResizeTimer = window.setTimeout(() => {
+          initHeroScrollScene();
+        }, 140);
+      },
+      { passive: true }
+    );
+
+    if (video.readyState >= 1) {
+      initHeroScrollScene();
+    }
+
+  </script>
+</body>
+</html>
