@@ -43,10 +43,7 @@
       preload="auto"
     ></video>
     <div class="intro-badge">Empire Rent</div>
-    <div class="end-blocks" aria-hidden="true">
-      <div class="end-block end-block-left"></div>
-      <div class="end-block end-block-right"></div>
-    </div>
+    <!-- end-blocks removed as requested -->
   </section>
   <section class="showcase-section" aria-label="Our apartments">
     <div class="showcase-grid">
@@ -1057,16 +1054,18 @@
           start: "top top",
           end: getHeroScrollDistance(),
           scrub: true,
-          // on mobile we skip pinning to keep the page scrollable and
-          // avoid the jank of pin with touch scroll events
-          pin: !isMobile,
+          // always pin so that scrolling is consumed by the video first;
+          // anticipatePin is reduced on mobile to avoid jumping when the
+          // element unpins
+          pin: true,
           anticipatePin: isMobile ? 0 : 1,
+          pinSpacing: true,
           invalidateOnRefresh: true,
           onLeave() {
-            if (!isMobile) placeTopNavFixed();
+            placeTopNavFixed();
           },
           onEnterBack() {
-            if (!isMobile) placeTopNavAbsolute();
+            placeTopNavAbsolute();
           },
           onUpdate(self) {
             const introProgress = gsap.utils.clamp(0, 1, self.progress / introEnd);

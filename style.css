@@ -137,39 +137,12 @@ body.apartment-scroll-locked {
   z-index: 4;
 }
 
-.end-blocks {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(980px, 88vw);
-  height: 100vh;
-  height: 100svh;
-  height: 100dvh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  pointer-events: none;
-  z-index: 3;
-}
-
-.end-block {
-  width: clamp(220px, 36vw, 520px);
-  height: clamp(130px, 18vw, 260px);
-  border-radius: 30px;
-  background: rgba(15, 14, 13, 0.28);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  opacity: 0;
-  will-change: transform, opacity;
-}
-
-.end-block-left {
-  transform: translateX(-100%);
-}
-
+/* end-blocks are no longer needed */
+.end-blocks,
+.end-block,
+.end-block-left,
 .end-block-right {
-  transform: translateX(100%);
+  display: none !important;
 }
 
 .showcase-section {
@@ -1317,9 +1290,7 @@ body.apartment-overlay-open .apartment-card:hover img {
     font-size: clamp(44px, 14vw, 96px);
   }
 
-  .end-blocks {
-    width: min(560px, 94vw);
-  }
+  /* .end-blocks removed */
 
   .end-block {
     width: clamp(120px, 34vw, 220px);
@@ -1389,15 +1360,6 @@ body.apartment-overlay-open .apartment-card:hover img {
     width: fit-content;
   }
 
-  .apartment-description {
-    top: 74px;
-    left: auto;
-    right: 14px;
-    width: clamp(180px, calc(100% - 280px), 420px);
-    max-height: 28vh;
-    padding: 12px 14px;
-    font-size: 14px;
-  }
 
   .apartment-history {
     left: auto;
@@ -1749,13 +1711,25 @@ body.apartment-overlay-open .apartment-card:hover img {
     max-height: min(60svh, 420px);
   }
 
+  .apartment-facts {
+    /* ensure the facts container stretches to full width so that the
+       entries can wrap naturally instead of pushing the layout */
+    left: 14px !important;
+    right: 14px !important;
+    width: calc(100% - 28px) !important;
+  }
+
   .apartment-fact-stack {
-    flex-wrap: wrap;
-    row-gap: 8px;
+    /* keep all facts in a single line */
+    flex-wrap: nowrap;
+    gap: 8px;
   }
 
   .apartment-fact-metric {
-    min-width: 30%;
+    /* allow metrics to shrink to fit one line */
+    min-width: auto;
+    flex: 0 1 auto;
+    white-space: nowrap;
   }
 
   .apartment-description {
@@ -1790,6 +1764,7 @@ body.apartment-overlay-open .apartment-card:hover img {
     display: none;
   }
 }
+
 
 @media (hover: none) {
   .apartment-card[data-apartment-id]:hover img {
