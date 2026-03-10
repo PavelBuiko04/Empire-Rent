@@ -24,6 +24,25 @@ p {
   visibility: visible;
   opacity: 1;
   -webkit-text-size-adjust: 100%;
+  color: #f8f4ef;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Safari phone number detection - prevent blue link styling */
+a[href^="tel:"],
+a[href^="mailto:"] {
+  color: #f8f4ef !important;
+  text-decoration: none !important;
+}
+
+/* Override Safari's default phone/email detection */
+@supports (-webkit-appearance: none) {
+  .site-footer-contact p,
+  .worker-carousel__meta {
+    color: #f8f4ef !important;
+    -webkit-user-select: none;
+  -webkit-user-select: text;
+  }
 }
 
 html.apartment-scroll-locked,
@@ -342,7 +361,7 @@ body.apartment-scroll-locked {
 
 .worker-carousel__meta {
   margin: 10px 0 0;
-  color: #f8f4ef;
+  color: #f8f4ef !important;
   font-family: "Josefin Slab", serif;
   font-size: clamp(14px, 1.05vw, 18px);
   letter-spacing: 0.04em;
@@ -357,6 +376,9 @@ body.apartment-scroll-locked {
   -moz-osx-font-smoothing: grayscale;
   font-variant-numeric: tabular-nums;
   text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  cursor: text;
 }
 
 .worker-carousel__desc + .worker-carousel__meta {
@@ -612,7 +634,7 @@ body.apartment-scroll-locked {
 .site-footer-brand p,
 .site-footer-contact p {
   margin: 10px 0 0;
-  color: #f8f4ef;
+  color: #f8f4ef !important;
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(15px, 1.1vw, 19px);
   line-height: 1.2;
@@ -625,6 +647,9 @@ body.apartment-scroll-locked {
   -moz-osx-font-smoothing: grayscale;
   font-variant-numeric: tabular-nums;
   text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  cursor: text;
 }
 
 .site-footer-nav {
