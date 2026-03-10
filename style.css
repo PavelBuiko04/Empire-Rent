@@ -11,10 +11,19 @@ body {
   min-height: 100%;
   background: var(--page-bg);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body.apartment-overlay-open {
   overflow: hidden;
+}
+
+p {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  -webkit-text-size-adjust: 100%;
 }
 
 html.apartment-scroll-locked,
@@ -76,6 +85,14 @@ body.apartment-scroll-locked {
   font-size: clamp(12px, 1.25vw, 20px);
   letter-spacing: 0.04em;
   white-space: nowrap;
+  display: inline-block;
+  visibility: visible;
+  opacity: 1;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-variant-numeric: tabular-nums;
+  text-rendering: optimizeLegibility;
 }
 
 .top-nav-toggle {
@@ -329,6 +346,17 @@ body.apartment-scroll-locked {
   font-family: "Josefin Slab", serif;
   font-size: clamp(14px, 1.05vw, 18px);
   letter-spacing: 0.04em;
+  font-weight: 300;
+  line-height: 1.4;
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  white-space: normal;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-variant-numeric: tabular-nums;
+  text-rendering: optimizeLegibility;
 }
 
 .worker-carousel__desc + .worker-carousel__meta {
@@ -496,6 +524,27 @@ body.apartment-scroll-locked {
   font-size: clamp(16px, 1.2vw, 20px);
   padding: 12px 14px;
   outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.consult-field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23f8f4ef' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+  cursor: pointer;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+/* Safari-specific select styling */
+@supports (-webkit-appearance: none) {
+  .consult-field select {
+    background-size: 12px 12px;
+    background-color: rgba(15, 14, 13, 0.36);
+  }
 }
 
 .consult-field textarea {
@@ -509,6 +558,7 @@ body.apartment-scroll-locked {
 .consult-field select:focus,
 .consult-field textarea:focus {
   border-color: rgba(248, 244, 239, 0.75);
+  box-shadow: 0 0 8px rgba(248, 244, 239, 0.15);
 }
 
 .consult-field-full {
@@ -566,6 +616,15 @@ body.apartment-scroll-locked {
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(15px, 1.1vw, 19px);
   line-height: 1.2;
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  white-space: normal;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-variant-numeric: tabular-nums;
+  text-rendering: optimizeLegibility;
 }
 
 .site-footer-nav {
@@ -643,6 +702,8 @@ body.apartment-scroll-locked {
   max-height: min(84vh, 760px);
   transform: scale(1);
   will-change: transform, opacity;
+  contain: layout style paint;
+  content-visibility: auto;
 }
 
 .apartment-card-primary,
@@ -674,6 +735,8 @@ body.apartment-scroll-locked {
   display: block;
   transform: scale(1);
   will-change: transform;
+  content-visibility: auto;
+  contain: layout style paint;
 }
 
 .apartment-card[data-apartment-id] > img {
@@ -1787,6 +1850,12 @@ body.apartment-overlay-open .apartment-card:hover img {
   .site-footer-wrap {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
+  }
+
+  /* Optimize image loading on mobile */
+  .apartment-card img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
   }
 }
 
