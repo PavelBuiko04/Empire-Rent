@@ -414,8 +414,31 @@
     }
 
     gsap.registerPlugin(ScrollTrigger);
+    gsap.defaults({ overwrite: 'auto' });
     const APARTMENT_ACTIVE_KEY = "empire-apartment-active";
     const APARTMENT_PROGRESS_KEY_PREFIX = "empire-apartment-progress-";
+
+    // Throttle function to optimize high-frequency mobile events
+    function throttle(fn, delay) {
+      let lastCall = 0;
+      let id = null;
+      return function(...args) {
+        const now = Date.now();
+        const remainingTime = delay - (now - lastCall);
+        
+        clearTimeout(id);
+        
+        if (remainingTime <= 0) {
+          fn.apply(this, args);
+          lastCall = now;
+        } else {
+          id = setTimeout(() => {
+            fn.apply(this, args);
+            lastCall = Date.now();
+          }, remainingTime);
+        }
+      };
+    }
 
     document.addEventListener("click", (event) => {
       const anchor = event.target.closest('a[href="#"]');
@@ -501,6 +524,13 @@
     });
 
     let activeApartment = null;
+
+    // Initialize throttled video progress setters for optimal mobile performance
+    apartments.forEach((apartment) => {
+      apartment.throttledSetProgress = throttle((newProgress) => {
+        setApartmentVideoProgress(apartment, newProgress);
+      }, 16);  // 16ms throttle = ~60fps, reduce to 33ms for lower-end mobile devices
+    });
 
     function setApartmentOverlayNavOpen(apartment, isOpen) {
       if (!apartment?.card) return;
@@ -645,7 +675,8 @@
       const currentY = event.touches[0].clientY;
       const delta = apartment.touchStartY - currentY;
       apartment.touchStartY = currentY;
-      setApartmentVideoProgress(apartment, apartment.videoProgress + delta / 1300);
+      // Throttle video progress updates to 16ms (60fps) on mobile
+      apartment.throttledSetProgress(apartment.videoProgress + delta / 1300);
     }
 
     function lockPageScroll() {
@@ -865,6 +896,9 @@
       apartment.onWheel = (event) => handleApartmentWheel(apartment, event);
       apartment.onTouchStart = (event) => handleApartmentTouchStart(apartment, event);
       apartment.onTouchMove = (event) => handleApartmentTouchMove(apartment, event);
+      
+      // Optional: Light throttle wheel events on desktop for skipped repaints (change to 16 if needed)
+      // apartment.onWheel = throttle((event) => handleApartmentWheel(apartment, event), 8);
 
       apartment.overlayUi?.addEventListener("click", (event) => {
         event.stopPropagation();

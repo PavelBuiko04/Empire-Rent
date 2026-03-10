@@ -642,7 +642,7 @@ body.apartment-scroll-locked {
   min-height: auto;
   max-height: min(84vh, 760px);
   transform: scale(1);
-  transition: transform 0.35s ease;
+  will-change: transform, opacity;
 }
 
 .apartment-card-primary,
@@ -673,7 +673,7 @@ body.apartment-scroll-locked {
   object-fit: cover;
   display: block;
   transform: scale(1);
-  transition: transform 0.45s ease;
+  will-change: transform;
 }
 
 .apartment-card[data-apartment-id] > img {
@@ -726,6 +726,7 @@ body.apartment-scroll-locked {
   letter-spacing: 0.02em;
   opacity: 0;
   transform: translateY(22px) scale(0.96);
+  will-change: opacity, transform;
 }
 
 .apartment-fact-price {
@@ -790,6 +791,7 @@ body.apartment-scroll-locked {
   pointer-events: none;
   z-index: 6;
   transition: opacity 0.25s ease;
+  will-change: opacity;
 }
 
 .apartment-card-expanded .apartment-overlay-ui {
@@ -810,6 +812,7 @@ body.apartment-scroll-locked {
   font-size: clamp(13px, 1vw, 18px);
   letter-spacing: 0.06em;
   cursor: pointer;
+  will-change: color;
 }
 
 .apartment-overlay-toggle {
@@ -881,6 +884,7 @@ body.apartment-scroll-locked {
   transform: translateY(18px);
   pointer-events: none;
   transition: opacity 0.2s ease;
+  will-change: opacity, transform;
 }
 
 .apartment-history {
@@ -901,6 +905,7 @@ body.apartment-scroll-locked {
   opacity: 0;
   transform: translateY(18px);
   pointer-events: none;
+  will-change: opacity, transform;
 }
 
 .apartment-history h4 {
@@ -944,6 +949,7 @@ body.apartment-scroll-locked {
   line-height: 1.2;
   opacity: 0;
   transform: translateY(16px) scale(0.96);
+  will-change: opacity, transform;
 }
 
 .apartment-card::after {
@@ -1765,6 +1771,24 @@ body.apartment-overlay-open .apartment-card:hover img {
   }
 }
 
+
+/* Mobile: Disable expensive backdrop-filter on all elements ≤768px */
+@media (max-width: 768px) {
+  .top-nav,
+  .showcase-button,
+  .apartment-fact,
+  .apartment-back,
+  .apartment-overlay-toggle,
+  .apartment-overlay-nav,
+  .apartment-description,
+  .apartment-history,
+  .apartment-keypoint,
+  .consult-wrap,
+  .site-footer-wrap {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
 
 @media (hover: none) {
   .apartment-card[data-apartment-id]:hover img {
