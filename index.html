@@ -630,6 +630,7 @@
 
     function handleApartmentWheel(apartment, event) {
       if (!apartment.expanded || !apartment.fullVideo) return;
+      // wheel events aren’t fired on touch devices, so this is purely desktop
       event.preventDefault();
       setApartmentVideoProgress(apartment, apartment.videoProgress + event.deltaY / 1800);
     }
@@ -641,6 +642,8 @@
 
     function handleApartmentTouchMove(apartment, event) {
       if (!apartment.expanded) return;
+      // while the apartment is open we take over the vertical gesture so
+      // swiping up/down scrubs the video rather than scrolling the page
       event.preventDefault();
       const currentY = event.touches[0].clientY;
       const delta = apartment.touchStartY - currentY;
@@ -714,9 +717,11 @@
       const finalizeOpen = () => {
         apartment.videoProgress = restoredProgress || 0;
         updateApartmentFacts(apartment, 0);
-        apartment.card.addEventListener("wheel", apartment.onWheel, { passive: false });
-        apartment.card.addEventListener("touchstart", apartment.onTouchStart, { passive: false });
-        apartment.card.addEventListener("touchmove", apartment.onTouchMove, { passive: false });
+        // attach handlers unconditionally; on mobile they'll intercept
+      // vertical swipes so the user can scrub the video.
+      apartment.card.addEventListener("wheel", apartment.onWheel, { passive: false });
+      apartment.card.addEventListener("touchstart", apartment.onTouchStart, { passive: false });
+      apartment.card.addEventListener("touchmove", apartment.onTouchMove, { passive: false });
         setApartmentOverlayNavOpen(apartment, false);
         apartment.expanded = true;
         apartment.animating = false;
@@ -1022,12 +1027,17 @@
     }
 
     function initHeroScrollScene() {
+      // always rebuild the scene when size changes; the behaviour will
+      // differ between desktop and mobile but the page should always
+      // respond to scroll.
       if (!video || !video.duration) return;
 
       clearHeroScrollScene();
       video.pause();
       placeTopNavAbsolute();
 
+      const isMobile = getViewportWidth() <= HERO_MOBILE_BREAKPOINT;
+      
       if (introBadge) {
         gsap.set(introBadge, { autoAlpha: 1 });
       }
@@ -1047,14 +1057,16 @@
           start: "top top",
           end: getHeroScrollDistance(),
           scrub: true,
-          pin: true,
-          anticipatePin: 1,
+          // on mobile we skip pinning to keep the page scrollable and
+          // avoid the jank of pin with touch scroll events
+          pin: !isMobile,
+          anticipatePin: isMobile ? 0 : 1,
           invalidateOnRefresh: true,
           onLeave() {
-            placeTopNavFixed();
+            if (!isMobile) placeTopNavFixed();
           },
           onEnterBack() {
-            placeTopNavAbsolute();
+            if (!isMobile) placeTopNavAbsolute();
           },
           onUpdate(self) {
             const introProgress = gsap.utils.clamp(0, 1, self.progress / introEnd);
@@ -1084,7 +1096,9 @@
       });
 
       if (topNav) {
-        const shouldFollowOnPage = window.innerWidth > 900;
+        // follow behaviour only on wide non‑mobile viewports to avoid
+        // forcing extra layout on phones
+        const shouldFollowOnPage = !isMobile && window.innerWidth > 900;
         ScrollTrigger.create({
           id: "hero-nav-follow",
           trigger: ".video-section",
