@@ -59,6 +59,13 @@ body.apartment-scroll-locked {
   background: var(--page-bg);
 }
 
+/* Mobile: Use svh to prevent bouncing when address bar appears/disappears */
+@media (max-width: 768px) {
+  .video-section {
+    height: 100svh;
+  }
+}
+
 .top-nav {
   position: absolute;
   top: var(--nav-top-offset);
@@ -146,6 +153,13 @@ body.apartment-scroll-locked {
   display: block;
 }
 
+/* Mobile: Use svh for video to prevent height changes */
+@media (max-width: 768px) {
+  #apple-video {
+    height: 100svh;
+  }
+}
+
 .intro-badge {
   position: absolute;
   top: 50vh;
@@ -171,6 +185,13 @@ body.apartment-scroll-locked {
   font-weight: 300;
   pointer-events: none;
   z-index: 4;
+}
+
+/* Mobile: Use svh units for intro badge positioning */
+@media (max-width: 768px) {
+  .intro-badge {
+    top: 50svh;
+  }
 }
 
 /* end-blocks are no longer needed */
