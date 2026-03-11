@@ -1119,9 +1119,27 @@
           normalizeScroll: isMobile ? true : false,
           onLeave() {
             placeTopNavFixed();
+            // On mobile: reveal content sections when hero is done scrolling
+            if (isMobile) {
+              document.body.classList.add("showcase-visible");
+              document.body.classList.add("about-visible");
+              document.body.classList.add("stats-visible");
+              document.body.classList.add("worker-visible");
+              document.body.classList.add("consult-visible");
+              document.body.classList.add("footer-visible");
+            }
           },
           onEnterBack() {
             placeTopNavAbsolute();
+            // On mobile: hide content sections when returning to hero
+            if (isMobile) {
+              document.body.classList.remove("showcase-visible");
+              document.body.classList.remove("about-visible");
+              document.body.classList.remove("stats-visible");
+              document.body.classList.remove("worker-visible");
+              document.body.classList.remove("consult-visible");
+              document.body.classList.remove("footer-visible");
+            }
           },
           onUpdate(self) {
             const introProgress = gsap.utils.clamp(0, 1, self.progress / introEnd);

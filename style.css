@@ -1884,6 +1884,30 @@ body.apartment-overlay-open .apartment-card:hover img {
   }
 }
 
+/* Mobile: Hide content below hero until scroll - show on scroll */
+@media (max-width: 768px) {
+  .showcase-section,
+  .about-section,
+  .stats-section,
+  .worker-carousel-section,
+  .consult-section,
+  .site-footer {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s ease, opacity 0.3s ease;
+  }
+
+  body.showcase-visible .showcase-section,
+  body.about-visible .about-section,
+  body.stats-visible .stats-section,
+  body.worker-visible .worker-carousel-section,
+  body.consult-visible .consult-section,
+  body.footer-visible .site-footer {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
 @media (hover: none) {
   .apartment-card[data-apartment-id]:hover img {
     transform: scale(1);
