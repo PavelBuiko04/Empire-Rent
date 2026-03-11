@@ -1108,7 +1108,7 @@
           trigger: ".video-section",
           start: "top top",
           end: getHeroScrollDistance(),
-          scrub: true,
+          scrub: isMobile ? 1 : true,
           // always pin so that scrolling is consumed by the video first;
           // anticipatePin is reduced on mobile to avoid jumping when the
           // element unpins
@@ -1116,6 +1116,7 @@
           anticipatePin: isMobile ? 0 : 1,
           pinSpacing: true,
           invalidateOnRefresh: true,
+          normalizeScroll: isMobile ? true : false,
           onLeave() {
             placeTopNavFixed();
           },
