@@ -59,10 +59,10 @@ body.apartment-scroll-locked {
   background: var(--page-bg);
 }
 
-/* Mobile: Use svh to prevent bouncing when address bar appears/disappears */
+/* Mobile: Use dvh for dynamic adaptation to address bar */
 @media (max-width: 768px) {
   .video-section {
-    height: 100svh;
+    height: 100dvh;
   }
 }
 
@@ -153,10 +153,10 @@ body.apartment-scroll-locked {
   display: block;
 }
 
-/* Mobile: Use svh for video to prevent height changes */
+/* Mobile: Use dvh for video to prevent height changes */
 @media (max-width: 768px) {
   #apple-video {
-    height: 100svh;
+    height: 100dvh;
   }
 }
 
@@ -187,10 +187,10 @@ body.apartment-scroll-locked {
   z-index: 4;
 }
 
-/* Mobile: Use svh units for intro badge positioning */
+/* Mobile: Use dvh units for intro badge positioning */
 @media (max-width: 768px) {
   .intro-badge {
-    top: 50svh;
+    top: 50dvh;
   }
 }
 
@@ -783,6 +783,7 @@ body.apartment-scroll-locked {
   will-change: transform;
   content-visibility: auto;
   contain: layout style paint;
+  transition: transform 0.3s ease;
 }
 
 .apartment-card[data-apartment-id] > img {
@@ -1071,12 +1072,8 @@ body.apartment-scroll-locked {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.72), transparent);
 }
 
-.apartment-card:hover {
-  transform: scale(1.02);
-}
-
 .apartment-card:hover img {
-  transform: scale(1.06);
+  transform: scale(1.08);
 }
 
 .apartment-card[data-apartment-id]:hover,
