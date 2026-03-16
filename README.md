@@ -6,7 +6,7 @@
 
 ---
 
-## � Demo Video
+## Demo Video
 
 <video width="100%" controls style="border-radius: 8px; margin: 20px 0;">
   <source src="demo.mp4" type="video/mp4">
@@ -17,7 +17,7 @@
 
 ---
 
-## �🎬 What You'll See
+## 🎬 What You'll See
 
 ### Hero Screen
 A full-screen cinematic experience:
