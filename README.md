@@ -5,7 +5,7 @@
 **[🌐 View Live Demo](https://pavelbuiko04.github.io/Empire-Rent/)**
 
 ---
-
+ 
 ## Demo Video
 
 <video width="100%" controls style="border-radius: 8px; margin: 20px 0;">
@@ -18,7 +18,7 @@
 ---
 
 ## 🎬 What You'll See
-
+ 
 ### Hero Screen
 A full-screen cinematic experience:
 - Video background synced with scroll
