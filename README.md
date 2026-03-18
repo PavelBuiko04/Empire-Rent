@@ -8,10 +8,10 @@
  
 ## Demo Video
 
-<video width="100%" controls style="border-radius: 8px; margin: 20px 0;">
-  <source src="demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+[![Demo Video Preview](apart1_16_9.png)](demo.mp4)
+
+> 📹 Click the image above to watch the demo video, or [download it directly](demo.mp4).
+
 ---
 
 ## 🎬 What You'll See
