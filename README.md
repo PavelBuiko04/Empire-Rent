@@ -12,9 +12,6 @@
   <source src="demo.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
-
-**Duration**: 21 seconds | **Size**: 32MB (optimized)
-
 ---
 
 ## 🎬 What You'll See
